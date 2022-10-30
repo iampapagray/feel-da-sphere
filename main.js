@@ -76,7 +76,7 @@ light3
   .onChange(() => pointLight3.color.set(light3Color.color));
 
 gui.close();
-gui.destroy();
+// gui.destroy();
 
 /**
  * Sizes
@@ -96,8 +96,8 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
 
   // Update renderer
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  ren.setSize(sizes.width, sizes.height);
+  ren.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 /**
@@ -110,9 +110,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.x = 0;
-camera.position.y = 0;
-camera.position.z = 2;
+camera.position.set(0, 0, 2);
 scene.add(camera);
 
 // Controls
